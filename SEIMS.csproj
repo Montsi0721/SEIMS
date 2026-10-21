@@ -1,0 +1,152 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{32C91657-5BEA-A96A-11B4-967D4C8DF1AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SEIMS</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notepad_Proof_csc_commands.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\SEIMS\CopilotIndices\18.11.1036.60925\SemanticSymbols.db" />
+    <None Include=".vs\SEIMS\CopilotIndices\18.11.1036.60925\SemanticSymbols.db-shm" />
+    <None Include=".vs\SEIMS\CopilotIndices\18.11.1036.60925\SemanticSymbols.db-wal" />
+    <None Include="Docs\sample_import.csv" />
+    <None Include="Docs\Testing_Documentation.md" />
+    <None Include="ManualCompile\build.bat" />
+    <None Include="SEIMS\appsettings.json" />
+    <None Include="SEIMS\SEIMS.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManualCompile\Demo.cs" />
+    <Compile Include="SEIMS\Collections\ItemWarehouse.cs" />
+    <Compile Include="SEIMS\Data\DatabaseInitializer.cs" />
+    <Compile Include="SEIMS\Data\SeedData.cs" />
+    <Compile Include="SEIMS\Data\SeimsDbContext.cs" />
+    <Compile Include="SEIMS\Events\LogHandler.cs" />
+    <Compile Include="SEIMS\Events\NotificationService.cs" />
+    <Compile Include="SEIMS\Models\AppUser.cs" />
+    <Compile Include="SEIMS\Models\AuditLog.cs" />
+    <Compile Include="SEIMS\Models\Category.cs" />
+    <Compile Include="SEIMS\Models\InventoryItem.Behavior.cs" />
+    <Compile Include="SEIMS\Models\InventoryItem.cs" />
+    <Compile Include="SEIMS\Models\IStorable.cs" />
+    <Compile Include="SEIMS\Models\PerishableItem.cs" />
+    <Compile Include="SEIMS\Models\Supplier.cs" />
+    <Compile Include="SEIMS\Models\SystemSetting.cs" />
+    <Compile Include="SEIMS\Program.cs" />
+    <Compile Include="SEIMS\Services\AppConfig.cs" />
+    <Compile Include="SEIMS\Services\ConsoleDemo.cs" />
+    <Compile Include="SEIMS\Services\CsvImporter.cs" />
+    <Compile Include="SEIMS\Services\FileLogger.cs" />
+    <Compile Include="SEIMS\Services\InputSanitizer.cs" />
+    <Compile Include="SEIMS\Services\InventoryService.cs" />
+    <Compile Include="SEIMS\Services\NativeMethods.cs" />
+    <Compile Include="SEIMS\Services\ReportEngine.cs" />
+    <Compile Include="SEIMS\Services\ReportRows.cs" />
+    <Compile Include="SEIMS\Services\SafeParser.cs" />
+    <Compile Include="SEIMS\Services\SecurePrinter.cs" />
+    <Compile Include="SEIMS\Services\SecurityService.cs" />
+    <Compile Include="SEIMS\Services\XmlExporter.cs" />
+    <Compile Include="SEIMS\UI\Controls\CardPanel.cs" />
+    <Compile Include="SEIMS\UI\Controls\DarkGrid.cs" />
+    <Compile Include="SEIMS\UI\Controls\IconTile.cs" />
+    <Compile Include="SEIMS\UI\Controls\ItemDetailsPanel.cs" />
+    <Compile Include="SEIMS\UI\Controls\ItemDetailsPanel.Designer.cs">
+      <DependentUpon>ItemDetailsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Controls\ItemsGridPanel.cs" />
+    <Compile Include="SEIMS\UI\Controls\ItemsGridPanel.Designer.cs">
+      <DependentUpon>ItemsGridPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Controls\KeyValueList.cs" />
+    <Compile Include="SEIMS\UI\Controls\NavButton.cs" />
+    <Compile Include="SEIMS\UI\Controls\Pill.cs" />
+    <Compile Include="SEIMS\UI\Controls\StatCard.cs" />
+    <Compile Include="SEIMS\UI\Controls\ThemedButton.cs" />
+    <Compile Include="SEIMS\UI\Icons.cs" />
+    <Compile Include="SEIMS\UI\ItemEditForm.cs" />
+    <Compile Include="SEIMS\UI\ItemEditForm.Designer.cs">
+      <DependentUpon>ItemEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\LoginForm.cs" />
+    <Compile Include="SEIMS\UI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\MainForm.cs" />
+    <Compile Include="SEIMS\UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Theme.cs" />
+    <Compile Include="SEIMS\UI\Views\AuditLogsView.cs" />
+    <Compile Include="SEIMS\UI\Views\AuditLogsView.Designer.cs">
+      <DependentUpon>AuditLogsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Views\CategoriesView.cs" />
+    <Compile Include="SEIMS\UI\Views\CategoriesView.Designer.cs">
+      <DependentUpon>CategoriesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Views\DashboardView.cs" />
+    <Compile Include="SEIMS\UI\Views\DashboardView.Designer.cs">
+      <DependentUpon>DashboardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Views\IReloadable.cs" />
+    <Compile Include="SEIMS\UI\Views\ItemsView.cs" />
+    <Compile Include="SEIMS\UI\Views\ItemsView.Designer.cs">
+      <DependentUpon>ItemsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Views\ReportsView.cs" />
+    <Compile Include="SEIMS\UI\Views\ReportsView.Designer.cs">
+      <DependentUpon>ReportsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEIMS\UI\Views\SettingsView.cs" />
+    <Compile Include="SEIMS\UI\Views\SettingsView.Designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\SEIMS.slnx\v18\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

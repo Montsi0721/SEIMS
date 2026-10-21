@@ -1,0 +1,7 @@
+sku,name,category,quantity,minimumLevel,unitPrice,location
+ITM-125,USB Flash Drive 64GB,Electronics,40,10,95.00,Warehouse A - Shelf 8
+ITM-126,Desk Lamp,Furniture,12,3,210.50,Warehouse B - Zone 4
+ITM-127,Highlighter Pack,Office Supplies,abc,10,18.00,Warehouse B - Shelf 2
+ITM-128,Rice 10kg,Unknown Category,25,5,120.00,Warehouse A - Shelf 6
+ITM-001,Duplicate Laptop,Electronics,5,2,100.00,Warehouse A - Shelf 1
+ITM-129,Stapler Heavy Duty,Office Supplies,30,8,64.00

@@ -1,0 +1,71 @@
+=====================================================================
+ SEIMS - NOTEPAD PROOF
+ Manual compile of InventoryItem.cs with the csc.exe compiler
+ Module: Programming using .Net 1 (C7-PN1-11)
+=====================================================================
+
+WHY THIS WORKS
+  The core classes (IStorable, Category, Supplier, InventoryItem [2 partial files],
+  PerishableItem, LogHandler, FileLogger) use only plain C# 5 and the .NET Framework
+  base library, so they compile with the csc.exe that ships with Windows - no Visual
+  Studio and no NuGet packages are needed.
+
+---------------------------------------------------------------------
+STEP 1 - open Command Prompt (Start > type cmd) and go to the folder
+---------------------------------------------------------------------
+  cd C:\path\to\SEIMS_Solution\ManualCompile
+
+---------------------------------------------------------------------
+STEP 2 - set the running path so Windows can find csc.exe
+---------------------------------------------------------------------
+  set PATH=%PATH%;C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
+  Check it worked:
+  where csc
+  csc /version
+
+  (Alternative: open "Developer Command Prompt for VS" - the path is already set.)
+
+---------------------------------------------------------------------
+STEP 3 - compile the core InventoryItem classes into a DLL
+---------------------------------------------------------------------
+  csc /nologo /target:library /out:InventoryItemCore.dll ^
+      ..\SEIMS\Models\IStorable.cs ^
+      ..\SEIMS\Models\Category.cs ^
+      ..\SEIMS\Models\Supplier.cs ^
+      ..\SEIMS\Models\InventoryItem.cs ^
+      ..\SEIMS\Models\InventoryItem.Behavior.cs ^
+      ..\SEIMS\Models\PerishableItem.cs ^
+      ..\SEIMS\Events\LogHandler.cs ^
+      ..\SEIMS\Services\FileLogger.cs
+
+  Note: InventoryItem is a PARTIAL class, so BOTH InventoryItem.cs and
+  InventoryItem.Behavior.cs must be on the command line.
+
+---------------------------------------------------------------------
+STEP 4 - compile the demo program into an executable
+---------------------------------------------------------------------
+  csc /nologo /target:exe /out:ManualDemo.exe Demo.cs ^
+      ..\SEIMS\Models\IStorable.cs ..\SEIMS\Models\Category.cs ^
+      ..\SEIMS\Models\Supplier.cs ..\SEIMS\Models\InventoryItem.cs ^
+      ..\SEIMS\Models\InventoryItem.Behavior.cs ..\SEIMS\Models\PerishableItem.cs ^
+      ..\SEIMS\Events\LogHandler.cs ..\SEIMS\Services\FileLogger.cs
+
+---------------------------------------------------------------------
+STEP 5 - run it
+---------------------------------------------------------------------
+  ManualDemo.exe
+  type manual_compile.log
+
+  Expected: item details, the override/hiding demo, deep-copy result, the CRITICAL STOCK
+  alert, and the same alert read back from manual_compile.log.
+
+---------------------------------------------------------------------
+SHORTCUT
+---------------------------------------------------------------------
+  Double-click  ManualCompile\build.bat  - it runs steps 2 to 5 automatically.
+
+---------------------------------------------------------------------
+PASTE YOUR SCREENSHOT BELOW THIS LINE (proof it compiled on your machine):
+---------------------------------------------------------------------
+
